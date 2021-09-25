@@ -1,5 +1,5 @@
 import { html, css, LitElement } from "lit";
-import { customElement, property, state } from "lit/decorators";
+import { customElement, property, state } from "lit/decorators.js";
 import "@material/mwc-circular-progress";
 
 import { instagram, twitter, youtube, github } from "./icons";
