@@ -1,6 +1,6 @@
 # Sanity Links Page
 
-This is a repo using Sanity to create and manage the data for a custom links page for social media like Instagram (ex. bio.link, linktree, etc.)
+This is a repo using Sanity to create and manage the data for a custom links page for social media profiles you'll often see in Instagram (ex. bio.link, linktree, etc.)
 
 ## Features
 
