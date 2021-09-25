@@ -7,6 +7,7 @@ import { instagram, twitter, youtube, github } from "./icons";
 const linksPage = `{
     LinksPage(id: "linksPage") {
       linksPageProfileImage{
+        alt
         asset{
           url
         }
@@ -151,6 +152,7 @@ export class SanityLinksPage extends LitElement {
                 width="200"
                 height="200"
                 src=${this._linksPageData.linksPageProfileImage.asset.url}
+                alt=${this._linksPageData.linksPageProfileImage.alt}
               />
               <h1>${this._linksPageData.name}</h1>
               <div class="social-icons__container">

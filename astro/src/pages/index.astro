@@ -12,7 +12,7 @@ const data = responeData.data.LinksPage;
 
 <BaseLayout>
     <section class="links-page__section">
-        <img class="profile__img" width="200" height="200" src={data.linksPageProfileImage.asset.url}>
+        <img class="profile__img" width="200" height="200" src={data.linksPageProfileImage.asset.url} alt={data.linksPageProfileImage.alt}>
         <h1>{data.name}</h1>
         <div class="social-icons__container">
             <a href={data.instagramURL}>

@@ -1,6 +1,7 @@
 export const linksPage = `{
   LinksPage(id: "linksPage") {
     linksPageProfileImage{
+      alt
       asset{
         url
       }
