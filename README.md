@@ -49,7 +49,3 @@ Follow the manual steps below:
     3.  `npm start`
     4.  Your Astro site should be running on [http://localhost:3000](http://localhost:3000)
 13. `npm run build` to build to production locally
-
-# sanity-links-page
-# sanity-links-page
-# links-page

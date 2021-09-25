@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import { sanityGraphqlQuery } from '../utils/helpers.js';
+import { linksPage } from '../lib/api.js';
+const response = await fetch(sanityGraphqlQuery(linksPage));
+const responeData = await response.json();
+const data = responeData.data.LinksPage;
+// const linkCards = data.data.LinksPage.linkCards;
+// const linksPageData = data.data.LinksPage;
+// console.log(linksPageData);
+console.log(data);
+---
+
+<BaseLayout>
+    <section class="links-page__section">
+        <img class="profile__img" width="200" height="200" src={data.linksPageProfileImage.asset.url}>
+        <h1>{data.name}</h1>
+        <div class="links-btn__container">
+            {data.linksButtonList.map((link) => <a class="links__btn" href={link.linkURL}>{link.linkText}</a>)}
+        </div>
+        <!-- <div>{JSON.stringify(data.linksButtonList)}</div> -->
+        <!-- {data.linksButtonList.map((link)) => <a>{link.linkText}</a>)} -->
+    </section>
+</BaseLayout>
+
+<style lang="scss">
+    .links-page__section {
+        padding: 1rem;
+        max-width: 860px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .profile__img {
+        border-radius: 50%;
+    }
+    .links-btn__container {
+        width: 60%;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        .links__btn {
+            margin-bottom: 1rem;
+            padding: 1rem 0.75rem;
+            text-align: center;
+            border: 4px solid #000000;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: inherit;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+</style>
