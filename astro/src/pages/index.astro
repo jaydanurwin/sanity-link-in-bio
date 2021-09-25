@@ -6,21 +6,31 @@ import { linksPage } from '../lib/api.js';
 const response = await fetch(sanityGraphqlQuery(linksPage));
 const responeData = await response.json();
 const data = responeData.data.LinksPage;
-// const linkCards = data.data.LinksPage.linkCards;
-// const linksPageData = data.data.LinksPage;
-// console.log(linksPageData);
-console.log(data);
+
+// console.log(data);
 ---
 
 <BaseLayout>
     <section class="links-page__section">
         <img class="profile__img" width="200" height="200" src={data.linksPageProfileImage.asset.url}>
         <h1>{data.name}</h1>
+        <div class="social-icons__container">
+            <a href={data.instagramURL}>
+                <img src="/assets/icons/instagram.svg">
+            </a>
+            <a href={data.twitterURL}>
+                <img src="/assets/icons/twitter.svg">
+            </a>
+            <a href={data.youtubeURL}>
+                <img src="/assets/icons/youtube.svg">
+            </a>
+            <a href={data.instagramURL}>
+                <img src="/assets/icons/instagram.svg">
+            </a>
+        </div>
         <div class="links-btn__container">
             {data.linksButtonList.map((link) => <a class="links__btn" href={link.linkURL}>{link.linkText}</a>)}
         </div>
-        <!-- <div>{JSON.stringify(data.linksButtonList)}</div> -->
-        <!-- {data.linksButtonList.map((link)) => <a>{link.linkText}</a>)} -->
     </section>
 </BaseLayout>
 
@@ -35,6 +45,25 @@ console.log(data);
     }
     .profile__img {
         border-radius: 50%;
+    }
+    .social-icons__container{
+        padding-bottom: 1rem;
+        display: flex;
+        // grid-template-columns: repeat(4, 1fr);
+        // gap: 1rem;
+        a {
+            display: flex;
+            margin-right: 1rem;
+            align-items: center;
+            justify-content: space-evenly;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            img {
+                width: 36px;
+                height: 36px;
+            }
+        }
     }
     .links-btn__container {
         width: 60%;
