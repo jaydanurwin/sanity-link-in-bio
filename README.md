@@ -18,7 +18,7 @@ Follow the manual steps below:
 
 ### Initial Sanity Setup
 
-1. [Create a repo from this template](https://github.com/jaydanurwin/sanity-links-page/generate)
+1. [Create a repo from this template](https://github.com/jaydanurwin/sanity-link-in-bio/generate)
 2. If you don't have the Sanity CLI already run `npm install -g @sanity/cli`
 3. Open a terminal from root folder of the project
 4. `cd sanity`
