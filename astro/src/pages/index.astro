@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import { sanityGraphqlQuery } from '../utils/helpers.js';
+import { getSanityContent } from '../utils/helpers.js';
 import { linksPage } from '../lib/api.js';
-const response = await fetch(sanityGraphqlQuery(linksPage));
-const responeData = await response.json();
-const data = responeData.data.LinksPage;
+const response = await getSanityContent({query: linksPage});
+const data = response.LinksPage;
 
 // console.log(data);
 ---
